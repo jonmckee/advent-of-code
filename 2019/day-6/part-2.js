@@ -1,4 +1,7 @@
-const input = require('../input')().split('\n').map(o => o.split(')'));
+import getInput from '../../input';
+
+const input = getInput('\n', o => o.split(')'));
+
 const toSum = (sum, n) => sum + n;
 
 const orbits = input.reduce((orbits, [object, satellite]) => {

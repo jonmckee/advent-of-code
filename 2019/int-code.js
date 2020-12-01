@@ -76,7 +76,7 @@ const handleOpCode = (opCode, instructions, address, systemId) => {
     return COMMANDS[opCode](instructions, address);
 };
 
-module.exports = (instructions, systemId, noun, verb) => {
+export default (instructions, systemId, noun, verb) => {
     noun && (instructions[1] = noun);
     verb && (instructions[2] = verb);
 

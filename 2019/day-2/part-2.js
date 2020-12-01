@@ -1,5 +1,6 @@
 const intcode = require('../int-code');
-const input = require('../input')().split(',').map(n => +n);
+import getInput from '../../input';
+const input = getInput(',');
 
 const desiredAnswer = 19690720;
 

@@ -1,5 +1,7 @@
-const input = require('../input')().split(',').map(n => +n);
-const intcode = require('../int-code');
+import intcode from '../int-code';
+import getInput from '../../input';
+
+const input = getInput(',');
 
 console.log('Part 2: ');
 intcode(input, 5);

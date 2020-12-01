@@ -1,4 +1,5 @@
-const input = require('../input')().split('\n').map(n => +n);
+import getInput from '../../input';
+const input = getInput();
 
 const calculateFuel = m => Math.floor(m / 3) - 2;
 const add = (sum, x) => sum + x;

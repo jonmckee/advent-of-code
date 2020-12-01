@@ -1,6 +1,7 @@
-const {getPoints, getInput, getIntersections} = require('./index');
+import {getPoints, getIntersections} from './index';
+import getInput from '../../input';
 
-const [wireA, wireB] = getInput();
+const [wireA, wireB] = getInput('\n', wire => wire.split(','));
 const aPath = getPoints(wireA);
 const bPath = getPoints(wireB);
 

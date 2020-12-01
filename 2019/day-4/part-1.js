@@ -1,4 +1,6 @@
-const [min, max] = require('../input')().split('-').map(n => +n);
+import getInput from '../../input';
+const [min, max] = getInput('-');
+
 const range = Array(max - min + 1).fill(min).map((n, i) => n + i);
 
 const getDigitArray = n => `${n}`.split('').map(d => +d);
