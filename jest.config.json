@@ -1,0 +1,7 @@
+{
+  "testMatch": [
+    "<rootDir>/**/*.spec.js"
+  ],
+  "transform": {},
+  "cacheDirectory": ".jest-cache"
+}

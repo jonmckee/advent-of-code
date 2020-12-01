@@ -2,18 +2,22 @@
   "name": "advent-of-code",
   "version": "1.0.0",
   "description": "My solutions for advent of code",
-  "main": "index.js",
+  "main": "input.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --config jest.config.json"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/typicaljon/advent-of-code.git"
   },
-  "author": "",
+  "author": "Jon McKee",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/typicaljon/advent-of-code/issues"
   },
-  "homepage": "https://github.com/typicaljon/advent-of-code#readme"
+  "homepage": "https://github.com/typicaljon/advent-of-code#readme",
+  "dependencies": {
+    "jest": "26.6.3"
+  }
 }
