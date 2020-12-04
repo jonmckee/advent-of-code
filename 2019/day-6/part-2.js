@@ -1,6 +1,6 @@
 import getInput from '../../input';
 
-const input = getInput('\n', o => o.split(')'));
+const input = getInput('\n', toNumber, o => o.split(')'));
 
 const toSum = (sum, n) => sum + n;
 

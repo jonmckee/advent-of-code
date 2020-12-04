@@ -1,7 +1,7 @@
 import {getPoints, getIntersections} from './index';
 import getInput from '../../input';
 
-const [wireA, wireB] = getInput('\n', wire => wire.split(','));
+const [wireA, wireB] = getInput('\n', toNumber, wire => wire.split(','));
 const aPath = getPoints(wireA);
 const bPath = getPoints(wireB);
 

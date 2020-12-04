@@ -4,7 +4,7 @@ import path from 'path';
 const toNumber = n => +n;
 const newLine = '\n';
 
-export default (day, split = newLine, map = toNumber) => {
+export default (day, map = toNumber, split = newLine) => {
     const year = process.argv.slice(-1)[0].split('/').slice(-2)[0];
 
     return fs

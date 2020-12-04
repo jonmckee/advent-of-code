@@ -3,7 +3,7 @@ import getInput from '../../input';
 
 const toManhattanDistance = ([x, y]) => ([x1, y1]) => Math.abs(x1 - x) + Math.abs(y1 - y);
 
-const [wireA, wireB] = getInput('\n', wire => wire.split(','));
+const [wireA, wireB] = getInput('\n', toNumber, wire => wire.split(','));
 const aPath = getPoints(wireA);
 const bPath = getPoints(wireB);
 
