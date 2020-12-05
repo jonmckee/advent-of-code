@@ -12,6 +12,9 @@ import day3part2 from './day-3/part-2';
 import day4part1 from './day-4/part-1';
 import day4part2 from './day-4/part-2';
 
+import day5part1 from './day-5/part-1';
+import day5part2 from './day-5/part-2';
+
 describe('2020', () => {
     describe('day 1', () => {
         let input;
@@ -105,6 +108,30 @@ describe('2020', () => {
                 const answer = day4part2(input);
 
                 expect(answer).toStrictEqual(109);
+            });
+        });
+    });
+
+    describe('day 5', () => {
+        let input;
+
+        beforeAll(() => {
+            input = getInput('day-5', l => l, '\n');
+        });
+
+        describe('part 1', () => {
+            it('should be 880', () => {
+                const answer = day5part1(input);
+
+                expect(answer).toStrictEqual(880);
+            });
+        });
+
+        describe('part 2', () => {
+            it('should be 731', () => {
+                const answer = day5part2(input);
+
+                expect(answer).toStrictEqual(731);
             });
         });
     });
