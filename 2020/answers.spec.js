@@ -1,4 +1,4 @@
-import getInput from '../input';
+import input from '../input';
 
 import day1part1 from './day-1/part-1';
 import day1part2 from './day-1/part-2';
@@ -14,6 +14,11 @@ import day4part2 from './day-4/part-2';
 
 import day5part1 from './day-5/part-1';
 import day5part2 from './day-5/part-2';
+
+import day6part1 from './day-6/part-1';
+import day6part2 from './day-6/part-2';
+
+const getInput = input('2020');
 
 describe('2020', () => {
     describe('day 1', () => {
@@ -132,6 +137,30 @@ describe('2020', () => {
                 const answer = day5part2(input);
 
                 expect(answer).toStrictEqual(731);
+            });
+        });
+    });
+
+    describe('day 6', () => {
+        let input;
+
+        beforeAll(() => {
+            input = getInput('day-6', l => l.split('\n'), '\n\n');
+        });
+
+        describe('part 1', () => {
+            it('should be 6587', () => {
+                const answer = day6part1(input);
+
+                expect(answer).toStrictEqual(6587);
+            });
+        });
+
+        describe('part 2', () => {
+            it('should be 3235', () => {
+                const answer = day6part2(input);
+
+                expect(answer).toStrictEqual(3235);
             });
         });
     });
