@@ -1,11 +1,9 @@
-export const count = (c, string) => string.split('').filter(_c => c === _c).length
-
-const checkPasswords = (line) => {
+const validPassword = line => {
     const [range, char, string] = line.split(' ');
-    const [min, max] = range.split('-')
-    const num = count(char[0], string);
+    const [min, max] = range.split('-');
+    const num = string.countChar(char[0]);
 
     return num >= min && num <= max;
 };
 
-export default (input) => input.filter(checkPasswords).length;
+export default input => input.count(validPassword);

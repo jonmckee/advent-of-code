@@ -1,11 +1,9 @@
-const checkPasswords = (line) => {
+const validPassword = line => {
     const [pos, character, string] = line.split(' ');
-    const [a, b] = pos.split('-')
-    const char = character[0];
-
+    const [a, b] = pos.split('-');
     const strArr = string.split('');
 
-    return [strArr[a - 1], strArr[b - 1]].filter(c => c === char).length === 1;
+    return [strArr[a - 1], strArr[b - 1]].count(c => c === character[0]) === 1;
 };
 
-export default (input) => input.filter(checkPasswords).length;
+export default input => input.count(validPassword);

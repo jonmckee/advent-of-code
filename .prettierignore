@@ -1,0 +1,3 @@
+# Ignore artifacts:
+.jest-cache
+node_modules

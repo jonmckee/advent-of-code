@@ -1,4 +1,4 @@
-export const getTreesForSlope = (input) => (slope) => {
+export const getTreesForSlope = input => slope => {
     let x = 0;
     let y = 0;
 
@@ -10,13 +10,10 @@ export const getTreesForSlope = (input) => (slope) => {
         }
 
         x = (x + slope[0]) % input[y].length;
-        y += slope[1]
+        y += slope[1];
     }
 
     return trees;
 };
 
-
-export default (input) => {
-    return getTreesForSlope(input)([3, 1]);
-}
+export default input => getTreesForSlope(input)([3, 1]);

@@ -17,7 +17,7 @@ function countOrbits(sum, object) {
     if (!satellites) {
         return sum;
     } else {
-        return sum + satellites.map(s => countOrbits(sum + 1, s)).reduce(toSum)
+        return sum + satellites.map(s => countOrbits(sum + 1, s)).reduce(toSum);
     }
 }
 

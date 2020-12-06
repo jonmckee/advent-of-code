@@ -1,5 +1,14 @@
-import {parsePassport} from './part-1';
-import {BIRTH_YEAR, COUNTRY_ID, EXPIRATION_YEAR, EYE_COLOR, HAIR_COLOR, HEIGHT, ISSUE_YEAR, PASSPORT_ID} from "./enums";
+import { parsePassport } from './part-1';
+import {
+    BIRTH_YEAR,
+    COUNTRY_ID,
+    EXPIRATION_YEAR,
+    EYE_COLOR,
+    HAIR_COLOR,
+    HEIGHT,
+    ISSUE_YEAR,
+    PASSPORT_ID
+} from './enums';
 
 const numberInRange = (number, min, max) => +number >= min && +number <= max;
 
@@ -28,13 +37,13 @@ const validateHairColor = hcl => {
         return chars[1].split('').every((_, i) => {
             const code = chars[1].charCodeAt(i);
 
-            return numberInRange(code, 48, 57)
-                || numberInRange(code, 97, 102);
+            return numberInRange(code, 48, 57) || numberInRange(code, 97, 102);
         });
     }
 };
 
-const validateEyeColor = ecl => ['amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth'].includes(ecl);
+const validateEyeColor = ecl =>
+    ['amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth'].includes(ecl);
 
 const validatePassportId = id => id?.length === 9;
 
@@ -49,8 +58,8 @@ const validators = {
     [COUNTRY_ID]: () => true
 };
 
-const validatePassport = (passport) => {
-    return Object.keys(passport).every((key) => {
+const validatePassport = passport => {
+    return Object.keys(passport).every(key => {
         const value = passport[key];
 
         return validators[key](value);
@@ -60,5 +69,5 @@ const validatePassport = (passport) => {
 export default input => {
     const passports = input.map(parsePassport);
 
-    return passports.filter(validatePassport).length
+    return passports.count(validatePassport);
 };

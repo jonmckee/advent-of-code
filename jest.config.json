@@ -1,6 +1,4 @@
 {
-  "testMatch": [
-    "<rootDir>/**/*.spec.js"
-  ],
-  "cacheDirectory": ".jest-cache"
+    "testMatch": ["<rootDir>/**/*.spec.js"],
+    "cacheDirectory": ".jest-cache"
 }

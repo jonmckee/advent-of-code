@@ -1,5 +1,5 @@
-const dX = {L: -1, R: 1, D: 0, U: 0};
-const dY = {L: 0, R: 0, D: -1, U: 1};
+const dX = { L: -1, R: 1, D: 0, U: 0 };
+const dY = { L: 0, R: 0, D: -1, U: 1 };
 
 export const getPoints = vectors => {
     let x = 0,

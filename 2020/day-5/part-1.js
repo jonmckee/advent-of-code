@@ -8,7 +8,7 @@ export const toSeatId = seat => {
     return row * 8 + col;
 };
 
-export default (input) => {
+export default input => {
     const seatIds = input.map(toBinaryPairs).map(toSeatId);
 
     return Math.max(...seatIds);

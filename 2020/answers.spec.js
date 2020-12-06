@@ -1,3 +1,5 @@
+import './utils';
+
 import input from '../input';
 
 import day1part1 from './day-1/part-1';

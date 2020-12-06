@@ -1,4 +1,4 @@
-import {toBinaryPairs} from "./part-1";
+import { toBinaryPairs } from './part-1';
 
 const COLUMNS = [0, 1, 2, 3, 4, 5, 6, 7];
 
@@ -6,7 +6,7 @@ const toSeatsByRow = (accum, seat) => {
     const [r, c] = seat;
 
     if (!accum[r]) {
-        accum[r] = [c]
+        accum[r] = [c];
     } else {
         accum[r].push(c);
     }
@@ -20,7 +20,7 @@ export default input => {
     const seats = input
         .map(toBinaryPairs)
         .map(toRowCol)
-        .reduce(toSeatsByRow, {})
+        .reduce(toSeatsByRow, {});
 
     const row = Object.keys(seats).find(row => seats[row].length === 7);
 

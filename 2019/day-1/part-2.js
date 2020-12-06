@@ -4,7 +4,7 @@ const input = getInput();
 const calculateFuel = m => Math.floor(m / 3) - 2;
 const add = (sum, x) => sum + x;
 
-const getFuelForMass = (mass) => {
+const getFuelForMass = mass => {
     const fuel = calculateFuel(mass);
 
     return fuel > 0 ? fuel + getFuelForMass(fuel) : 0;

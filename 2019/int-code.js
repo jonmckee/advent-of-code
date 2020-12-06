@@ -12,7 +12,7 @@ const log = (opCode, instr, p) => {
     }
 };
 
-const getModes = (instruction) => {
+const getModes = instruction => {
     const arr = `${instruction}`.split('');
     arr.splice(arr.length - 2);
     arr.reverse();
@@ -20,21 +20,23 @@ const getModes = (instruction) => {
 };
 const getOperands = (instr, a) => {
     const modes = getModes(instr[a]);
-    return [instr[a + 1], instr[a + 2]].map((v, i) => modes[i] ? v : instr[v]);
+    return [instr[a + 1], instr[a + 2]].map((v, i) =>
+        modes[i] ? v : instr[v]
+    );
 };
 
 const add = (a, b) => a + b;
 const multiply = (a, b) => a * b;
-const lessThan = (left, right) => left < right ? 1 : 0;
-const equals = (left, right) => left === right ? 1 : 0;
-const math = (handler) => (instr, p) => {
+const lessThan = (left, right) => (left < right ? 1 : 0);
+const equals = (left, right) => (left === right ? 1 : 0);
+const math = handler => (instr, p) => {
     const [left, right] = getOperands(instr, p);
     const store = instr[p + 3];
     instr[store] = handler(left, right);
     return p + 4;
 };
 
-const input = (systemId) => (instr, p) => {
+const input = systemId => (instr, p) => {
     instr[instr[p + 1]] = systemId;
     return p + 2;
 };
@@ -47,12 +49,12 @@ const output = (instr, p) => {
 
 const ifTrue = (one, two) => one !== 0 && two;
 const ifFalse = (one, two) => one === 0 && two;
-const jump = (handler) => (instr, p) => {
+const jump = handler => (instr, p) => {
     const [left, right] = getOperands(instr, p);
     return handler(left, right) || p + 3;
 };
 
-const getOpCode = (instruction) => +`${instruction}`.split('').slice(-1)[0];
+const getOpCode = instruction => +`${instruction}`.split('').slice(-1)[0];
 const handleOpCode = (opCode, instructions, address, systemId) => {
     const COMMANDS = {
         1: math(add),
