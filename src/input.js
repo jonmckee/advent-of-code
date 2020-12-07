@@ -8,17 +8,23 @@ export const mappers = {
 
 export const parsers = {
     groups: '\n\n',
-    newLine: '\n'
+    newLine: '\n',
+    none: ''
 };
 
 export default year => (day, split = parsers.newLine, map) => {
-    const input = fs
-        .readFileSync(path.resolve('src', year, day, 'input.txt'), 'utf-8')
-        .split(split);
+    const filePath = path.resolve('src', year, day, 'input.txt');
+    const fileContents = fs.readFileSync(filePath, 'utf-8');
 
-    if (map) {
-        return input.map(map);
+    if (split === parsers.none) {
+        return fileContents;
     } else {
-        return input;
+        const input = fileContents.split(split);
+
+        if (map) {
+            return input.map(map);
+        } else {
+            return input;
+        }
     }
 };

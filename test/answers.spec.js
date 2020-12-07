@@ -1,11 +1,11 @@
 import '../src/utils';
 
-import * as years from '../src';
+import { years } from '../src';
 
 function testSolution(solutions, answers) {
-    return () => {
-        const input = solutions.input();
+    const input = solutions.input();
 
+    return () => {
         expect(solutions.part1.default(input)).toStrictEqual(answers.part1);
         expect(solutions.part2.default(input)).toStrictEqual(answers.part2);
     };
@@ -13,15 +13,32 @@ function testSolution(solutions, answers) {
 
 describe('Advent of Code', () => {
     Object.keys(years).forEach(year => {
-        const name = year.replace('year', '');
-
-        describe(name, () => {
+        describe(year, () => {
             const { solutions, answers } = years[year];
 
             Object.keys(solutions).forEach(day => {
                 const _day = day.slice(3);
+                const solution = solutions[day];
 
-                it(`Day ${_day}`, testSolution(solutions[day], answers[day]));
+                describe(`Day ${_day}`, () => {
+                    let input;
+
+                    beforeAll(() => {
+                        input = solution.input();
+                    });
+
+                    it('Part 1', () => {
+                        expect(solution.part1.default(input)).toStrictEqual(
+                            answers[day].part1
+                        );
+                    });
+
+                    it('Part 2', () => {
+                        expect(solution.part2.default(input)).toStrictEqual(
+                            answers[day].part2
+                        );
+                    });
+                });
             });
         });
     });
