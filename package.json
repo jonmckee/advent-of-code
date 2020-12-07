@@ -2,7 +2,7 @@
     "name": "advent-of-code",
     "version": "1.0.0",
     "description": "My solutions for advent of code",
-    "main": "input.js",
+    "main": "src/input.js",
     "type": "module",
     "scripts": {
         "test": "jest --config jest.config.json"

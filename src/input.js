@@ -13,7 +13,7 @@ export const parsers = {
 
 export default year => (day, split = parsers.newLine, map) => {
     const input = fs
-        .readFileSync(path.resolve(year, day, 'input.txt'), 'utf-8')
+        .readFileSync(path.resolve('src', year, day, 'input.txt'), 'utf-8')
         .split(split);
 
     if (map) {
