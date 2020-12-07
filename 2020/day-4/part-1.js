@@ -35,7 +35,7 @@ export const hasRequiredFields = (
 };
 
 export const parsePassport = passport => {
-    const lines = passport.split('\n').flatMap(s => s.split(' '));
+    const lines = passport.flatMap(s => s.split(' '));
 
     return {
         [BIRTH_YEAR]: getField(BIRTH_YEAR, lines),

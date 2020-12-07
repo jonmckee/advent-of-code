@@ -1,12 +1,24 @@
 import fs from 'fs';
 import path from 'path';
 
-const toNumber = n => +n;
-const newLine = '\n';
+export const mappers = {
+    toNumber: n => +n,
+    toGroup: g => g.split(parsers.newLine)
+};
 
-export default year => (day, map = toNumber, split = newLine) => {
-    return fs
+export const parsers = {
+    groups: '\n\n',
+    newLine: '\n'
+};
+
+export default year => (day, split = parsers.newLine, map) => {
+    const input = fs
         .readFileSync(path.resolve(year, day, 'input.txt'), 'utf-8')
-        .split(split)
-        .map(map);
+        .split(split);
+
+    if (map) {
+        return input.map(map);
+    } else {
+        return input;
+    }
 };
