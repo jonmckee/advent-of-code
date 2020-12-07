@@ -47,5 +47,5 @@ export const answers = {
     day4: { part1: 182, part2: 109 },
     day5: { part1: 880, part2: 731 },
     day6: { part1: 6587, part2: 3235 },
-    day7: { part1: '', part2: '' }
+    day7: { part1: 211, part2: 12414 }
 };
