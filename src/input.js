@@ -2,8 +2,9 @@ import fs from 'fs';
 import path from 'path';
 
 export const mappers = {
+    toGroup: g => g.split(parsers.newLine),
     toNumber: n => +n,
-    toGroup: g => g.split(parsers.newLine)
+    toPair: split => n => n.split(split)
 };
 
 export const parsers = {
