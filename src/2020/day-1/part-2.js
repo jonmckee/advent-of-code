@@ -1,4 +1,4 @@
-const hasTwoNumbersThatSumTo = (input, target) =>
+export const hasTwoNumbersThatSumTo = (input, target) =>
     input.some(_x => input.includes(target - _x));
 
 export default input =>

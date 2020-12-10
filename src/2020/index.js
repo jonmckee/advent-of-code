@@ -42,6 +42,11 @@ export const solutions = {
         input: () => getInput('day-8', parsers.newLine, mappers.toPair(' ')),
         part1: require('./day-8/part-1'),
         part2: require('./day-8/part-2')
+    },
+    day9: {
+        input: () => getInput('day-9', parsers.newLine, mappers.toNumber),
+        part1: require('./day-9/part-1'),
+        part2: require('./day-9/part-2')
     }
 };
 
@@ -53,5 +58,6 @@ export const answers = {
     day5: { part1: 880, part2: 731 },
     day6: { part1: 6587, part2: 3235 },
     day7: { part1: 211, part2: 12414 },
-    day8: { part1: 1930, part2: 1688 }
+    day8: { part1: 1930, part2: 1688 },
+    day9: { part1: 542529149, part2: 75678618 }
 };
