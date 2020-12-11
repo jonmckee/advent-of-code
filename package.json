@@ -9,14 +9,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/typicaljon/advent-of-code.git"
+        "url": "git+https://github.com/jonmckee/advent-of-code.git"
     },
     "author": "Jon McKee",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/typicaljon/advent-of-code/issues"
+        "url": "https://github.com/jonmckee/advent-of-code/issues"
     },
-    "homepage": "https://github.com/typicaljon/advent-of-code#readme",
+    "homepage": "https://github.com/jonmckee/advent-of-code#readme",
     "dependencies": {
         "@babel/core": "7.12.9",
         "@babel/plugin-proposal-dynamic-import": "7.12.1",
