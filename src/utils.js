@@ -13,3 +13,15 @@ Array.prototype.product = function () {
 Array.prototype.sum = function () {
     return this.reduce((sum, x) => sum + x);
 };
+
+Array.prototype.last = function () {
+    return this.slice(-1)[0];
+};
+
+Math.factorial = function (n) {
+    if (n === 1) {
+        return n;
+    } else {
+        return n * Math.factorial(n - 1);
+    }
+};
