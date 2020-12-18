@@ -4,7 +4,8 @@ import path from 'path';
 export const mappers = {
     toGroup: g => g.split(parsers.newLine),
     toNumber: n => +n,
-    toPair: split => n => n.split(split)
+    toPair: split => n => n.split(split),
+    toChar: n => n.split('')
 };
 
 export const parsers = {
